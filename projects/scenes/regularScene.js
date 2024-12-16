@@ -117,7 +117,7 @@ function createGarage(scene, garageXPosition, garageZPosition) {
     const garageDoorGeometry = new THREE.BoxGeometry(6, 3, 0.1);
     const garageDoorMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
     const garageDoor = new THREE.Mesh(garageDoorGeometry, garageDoorMaterial);
-    garageDoor.position.set(garageXPosition, 1.5, garageZPosition + 3);
+    garageDoor.position.set(garageXPosition, 2, garageZPosition + 3);
     scene.add(garageDoor);
 }
 
@@ -131,7 +131,7 @@ function createWindows(scene, houseXPosition, houseZPosition) {
 
     // Left Window
     const leftWindow = new THREE.Mesh(windowGeometry, windowMaterial);
-    leftWindow.position.set(houseXPosition - 4, 4, frontWallZPosition); // Properly positioned on the front wall
+    leftWindow.position.set(houseXPosition - 3, 4, frontWallZPosition); // Properly positioned on the front wall
     scene.add(leftWindow);
 
     // Right Window
