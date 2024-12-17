@@ -21,6 +21,8 @@ export function regularScene(scene) {
 
     // Add Regular Show House
     createRegularShowHouse(scene);
+    addCharacterImages(scene);
+
 
     // Add warm sunlight
     const sunlight = new THREE.DirectionalLight(0xffe4b5, 1);
@@ -99,7 +101,7 @@ function createRegularShowHouse(scene) {
     const doorGeometry = new THREE.BoxGeometry(1.5, 2.5, 0.1);
     const doorMaterial = new THREE.MeshStandardMaterial({ color: 0x6b6e6d });
     const door = new THREE.Mesh(doorGeometry, doorMaterial);
-    door.position.set(houseXPosition, 1.5, houseZPosition + 6);
+    door.position.set(houseXPosition, 1.5, houseZPosition + 5);
     scene.add(door);
 
     // Windows
@@ -127,7 +129,7 @@ function createWindows(scene, houseXPosition, houseZPosition) {
     const windowMaterial = new THREE.MeshStandardMaterial({ color: 0x87ceeb }); // Light blue
 
     // Adjusted z-position to ensure they are slightly in front of the house wall
-    const frontWallZPosition = houseZPosition + 4.95;
+    const frontWallZPosition = houseZPosition + 5;
 
     // Left Window
     const leftWindow = new THREE.Mesh(windowGeometry, windowMaterial);
@@ -138,4 +140,20 @@ function createWindows(scene, houseXPosition, houseZPosition) {
     const rightWindow = new THREE.Mesh(windowGeometry, windowMaterial);
     rightWindow.position.set(houseXPosition + 3, 4, frontWallZPosition); // Properly positioned on the front wall
     scene.add(rightWindow);
+}
+
+function addCharacterImages(scene) {
+  const loader = new THREE.TextureLoader();
+
+  loader.load('./images/regshow.png', (texture) => {
+    const charMaterial = new THREE.MeshBasicMaterial({
+  map: texture,
+  transparent: true,
+});
+
+    const charGeometry = new THREE.PlaneGeometry(5, 5);
+    const charMesh = new THREE.Mesh(charGeometry, charMaterial);
+    charMesh.position.set(0, 2.27, -1);
+    scene.add(charMesh);
+  });
 }

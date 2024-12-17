@@ -123,7 +123,7 @@ function addCharacterImages(scene) {
 
     const courageGeometry = new THREE.PlaneGeometry(2, 3); // Adjust size
     const courageMesh = new THREE.Mesh(courageGeometry, courageMaterial);
-    courageMesh.position.set(5, 1.5, -9); // Right side of the house
+    courageMesh.position.set(5, 1.25, -4); // Right side of the house
     scene.add(courageMesh);
   });
 
@@ -136,7 +136,7 @@ function addCharacterImages(scene) {
 
     const murielGeometry = new THREE.PlaneGeometry(2, 3); // Adjust size
     const murielMesh = new THREE.Mesh(murielGeometry, murielMaterial);
-    murielMesh.position.set(-5, 1.5, -9); // Left side of the house
+    murielMesh.position.set(-5, 1.25, -4); // Left side of the house
     scene.add(murielMesh);
   });
 }

@@ -15,6 +15,7 @@ export function gumballScene(scene) {
 
     // Lockers setup
     createLockers(scene, -25, 25, 0, 2.5, -5);
+      addCharacterImages(scene);
 
     // Add lighting to highlight the shiny surfaces
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
@@ -70,4 +71,21 @@ function createLockerHandle(scene, x, y, z) {
     handle.rotation.z = Math.PI / 2; // Lay the handle flat
     handle.position.set(x, y - 0.5, z); // Lower part of the locker
     scene.add(handle);
+}
+
+function addCharacterImages(scene) {
+  const loader = new THREE.TextureLoader();
+
+  // Load Courage Image
+  loader.load('./images/gumball.png', (texture) => {
+    const gumMaterial = new THREE.MeshBasicMaterial({
+  map: texture,
+  transparent: true,
+});
+
+    const gumGeometry = new THREE.PlaneGeometry(5, 3); // Adjust size
+    const gumMesh = new THREE.Mesh(gumGeometry, gumMaterial);
+    gumMesh.position.set(0, 1.25, -1); // In front of the house
+    scene.add(gumMesh);
+  });
 }

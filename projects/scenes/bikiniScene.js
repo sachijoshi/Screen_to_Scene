@@ -21,12 +21,15 @@ export function bikiniScene(scene) {
     const rockGeometry = new THREE.SphereGeometry(2, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2); // Half-sphere
     const rockMaterial = new THREE.MeshStandardMaterial({ color: 0x8b4513 }); // Dark brown
     const rock = new THREE.Mesh(rockGeometry, rockMaterial);
-    //rock.rotation.x = -Math.PI / 2; // Lay flat
-    rock.position.set(6, 0, -10); // Position Patrick's house
+    rock.scale.set(1, 1.5, 1); // Scale taller on the Y-axis
+    rock.position.set(6, 0, -10); // Adjusted Y position for the taller rock
     scene.add(rock);
 
     // Paths to houses
     createPaths(scene);
+
+    addCharacterImages(scene);
+
 }
 
 
@@ -185,4 +188,34 @@ function createPaths(scene) {
     pathToRock.position.set(6, 0.01, -8);
     pathToRock.rotation.x = -Math.PI / 2;
     scene.add(pathToRock);
+}
+
+function addCharacterImages(scene) {
+  const loader = new THREE.TextureLoader();
+
+  // Load Courage Image
+  loader.load('./images/sponge.png', (texture) => {
+    const sponge = new THREE.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+    });
+
+    const spongeGeometry = new THREE.PlaneGeometry(2.5, 3); // Adjust size
+    const spongeMesh = new THREE.Mesh(spongeGeometry, sponge);
+    spongeMesh.position.set(3, 1, -3); // Right side of the house
+    scene.add(spongeMesh);
+  });
+
+  // Load Muriel Image
+  loader.load('./images/squid.png', (texture) => {
+    const squidMaterial = new THREE.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+    });
+
+    const squidGeometry = new THREE.PlaneGeometry(2, 3); // Adjust size
+    const squidMesh = new THREE.Mesh(squidGeometry, squidMaterial);
+    squidMesh.position.set(-3, 1.5, -3); // Left side of the house
+    scene.add(squidMesh);
+  });
 }
