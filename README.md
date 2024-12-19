@@ -26,4 +26,8 @@ You can then click through the different scenes from the menu button in the top 
 ![gumm](https://github.com/user-attachments/assets/f4633838-48d8-4896-a63e-993e9e06851d)
 
 
-# Roblox Visuals #
+# Roblox Visuals 
+Below are the different characters you can choose from:
+
+
+
