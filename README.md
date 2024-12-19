@@ -19,7 +19,7 @@ Below are the various scenes that we have created with three.js, javascript, htm
 Initially it opens up on the Courage the Cowardly Dog Show scene:
 ![courage](https://github.com/user-attachments/assets/1d3d531b-f71c-41c2-b8c7-911bda70d584)
 
-You can then click through the different scenes from the menu button in the top left corner. Below are the other scenes you can immerse yourseld in:
+You can then click through the different scenes from the menu button in the top left corner. Below are the other scenes you can immerse yourself in:
 ![spongebob](https://github.com/user-attachments/assets/ff6243de-df5c-4eca-91ff-220a123b1a2e)
 ![reg](https://github.com/user-attachments/assets/ff985046-56ae-422c-8200-c556a6184dcb)
 ![gumm](https://github.com/user-attachments/assets/f4633838-48d8-4896-a63e-993e9e06851d)
