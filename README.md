@@ -12,6 +12,7 @@ These scenes will also have a secret transition that will lead you to a custom R
 # Usage
 
 To access this space, click on the following GitHub Pages link: https://sachijoshi.github.io/Screen_to_Scene/projects/index.html
+
 How to move around: The WASD keys on your keyboard correspond with directions: W [forward], S [backward], A [right], D [left]. You can also use your mouse on the trackpad to drag the screen around to look up, down, right, left or any direction.
 
 # Visuals
