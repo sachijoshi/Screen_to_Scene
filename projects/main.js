@@ -37,6 +37,7 @@ function init() {
 
     // Load initial scene and start animation loop
     courageScene(scene);
+    setupSettings();
 
     setupMovementControls();
     setupMouseControls();
