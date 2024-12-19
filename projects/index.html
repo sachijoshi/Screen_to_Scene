@@ -49,106 +49,102 @@
         }
 
         /* Settings modal styles */
-#settings-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    z-index: 1000; /* Increased z-index to be on top */
-}
+        #settings-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 1000; /* Increased z-index to be on top */
+        }
 
-.settings-content {
-    background: #333;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 300px;
-}
-
+        .settings-content {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
 
         .hidden {
             display: none !important;
         }
+
         /* Sidebar styling */
-#sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 10px;
-    transition: transform 0.3s ease-in-out; /* Smooth slide transition */
-    transform: translateX(0); /* Sidebar initially visible */
-}
+        #sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 10px;
+            transition: transform 0.3s ease-in-out; /* Smooth slide transition */
+            transform: translateX(0); /* Sidebar initially visible */
+        }
 
-#sidebar.hidden {
-    transform: translateX(-200px); /* Slide sidebar off-screen */
-}
+        #sidebar.hidden {
+            transform: translateX(-200px); /* Slide sidebar off-screen */
+        }
 
-/* Menu button styling */
-#menu-button {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1000; /* Ensure it's on top of other elements */
-}
+        /* Menu button styling */
+        #menu-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's on top of other elements */
+        }
 
-#menu-button.hidden {
-    display: none; /* Hide button initially */
-}
-
+        #menu-button.hidden {
+            display: none; /* Hide button initially */
+        }
     </style>
 </head>
 
 <body>
     <!-- Sidebar -->
-<!-- Sidebar -->
-<div id="sidebar">
-    <button class="scene-button" data-scene="courage">Courage the Cowardly Dog Show</button>
-    <button class="scene-button" data-scene="bikini">SpongeBob SquarePants</button>
-    <button class="scene-button" data-scene="regular">Regular Show</button>
-    <button class="scene-button" data-scene="gumball">The Amazing World of Gumball</button>
-    <button id="settings-button">Settings</button>
-</div>
+    <div id="sidebar">
+        <button class="scene-button" data-scene="courage">Courage the Cowardly Dog Show</button>
+        <button class="scene-button" data-scene="bikini">SpongeBob SquarePants</button>
+        <button class="scene-button" data-scene="regular">Regular Show</button>
+        <button class="scene-button" data-scene="gumball">The Amazing World of Gumball</button>
+        <button id="settings-button">Settings</button>
+    </div>
 
-<!-- Menu Button (hidden initially) -->
-<button id="menu-button" class="hidden">
-    <img src="images/menubutton.webp" alt="Menu Icon" style="width: 30px; height: 30px;">
-</button>
-
+    <!-- Menu Button (hidden initially) -->
+    <button id="menu-button" class="hidden">
+        <img src="images/menubutton.webp" alt="Menu Icon" style="width: 30px; height: 30px;">
+    </button>
 
     <!-- Settings Modal -->
     <div id="settings-modal" class="hidden">
-    <div class="settings-content">
-        <h2>Settings</h2>
-        <label>
-            Music Volume:
-            <input id="music-volume" type="range" min="0" max="1" step="0.1" value="0.5">
-        </label>
-        <br><br>
-        <label>
-            <input id="fps-toggle" type="checkbox"> Show FPS Counter
-        </label>
-        <br><br>
-        <button id="close-settings">Close</button>
+        <div class="settings-content">
+            <h2>Settings</h2>
+            <label>
+                Music Volume:
+                <input id="music-volume" type="range" min="0" max="1" step="0.1" value="0.5">
+            </label>
+            <br><br>
+            <label>
+                <input id="fps-toggle" type="checkbox"> Show FPS Counter
+            </label>
+            <br><br>
+            <button id="close-settings">Close</button>
+        </div>
     </div>
-</div>
-
 
     <!-- Stats.js for FPS Counter -->
     <script src="https://mrdoob.github.io/stats.js/build/stats.min.js"></script>
@@ -157,10 +153,4 @@
     <script type="module" src="main.js"></script>
 </body>
 
-</html>
-
-
-    <!-- Main Script -->
-    <script type="module" src="main.js"></script>
-</body>
 </html>
