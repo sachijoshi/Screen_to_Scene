@@ -220,15 +220,31 @@ function toggleFPSCounter(enable) {
         if (!stats) {
             import('https://cdn.jsdelivr.net/npm/stats.js').then((module) => {
                 stats = new module.default();
-                stats.showPanel(0);
+                stats.showPanel(0); // 0 = FPS panel
+
+                // Position the FPS counter at the bottom-right corner
+                stats.dom.style.position = 'fixed';
+                stats.dom.style.bottom = '10px';
+                stats.dom.style.right = '10px';
+                stats.dom.style.zIndex = '1000'; // Ensure it's above other elements
+
                 document.body.appendChild(stats.dom);
+                console.log('FPS counter enabled');
+            }).catch((err) => {
+                console.error('Failed to load stats.js:', err);
             });
         }
     } else if (stats) {
-        document.body.removeChild(stats.dom);
+        // Remove the stats DOM element when disabling FPS counter
+        if (stats.dom && stats.dom.parentNode) {
+            stats.dom.parentNode.removeChild(stats.dom);
+            console.log('FPS counter disabled');
+        }
         stats = null;
     }
 }
+
+
 
 // Handle window resizing
 window.addEventListener('resize', () => {
