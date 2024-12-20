@@ -17,16 +17,18 @@ How to move around: The WASD keys on your keyboard correspond with directions: W
 
 # Visuals
 Below are the various scenes that we have created with three.js, javascript, html, and css. 
-Initially it opens up on the **Courage the Cowardly Dog Show** scene:
+Below it shows the inital scene the site opens up to which is from the **Courage the Cowardle Dog Show**:
+
+## Courage the Cowardly Dog Show
 ![courage](https://github.com/user-attachments/assets/1d3d531b-f71c-41c2-b8c7-911bda70d584)
 
 You can then click through the different scenes from the menu button in the top left corner. Below are the other scenes you can immerse yourself in:
 
-**SpongeBob SquarePants**
+## SpongeBob SquarePants
 ![spongebob](https://github.com/user-attachments/assets/ff6243de-df5c-4eca-91ff-220a123b1a2e)
-**Regular Show**
+## Regular Show
 ![reg](https://github.com/user-attachments/assets/ff985046-56ae-422c-8200-c556a6184dcb)
-**The Amazing World of Gumball**
+## The Amazing World of Gumball
 ![gumm](https://github.com/user-attachments/assets/f4633838-48d8-4896-a63e-993e9e06851d)
 
 
@@ -59,3 +61,28 @@ This game is an interactive adventure where players can explore, morph into diff
 ![image](https://github.com/user-attachments/assets/d596456d-4d39-45f3-a246-b92639f3b5dd)
 
 # Future Improvements
+We acknowledge that there are some improvements we can make to create an experience that is better for users of the site as well as users of the Roblox game. 
+## Improvements for the Website
+1. Add a barrier box around the scene so that users cannot indefinitely fly off the screen and keep moving further from the main area of the scene created.
+2. Add more secret entrances to the Roblox game and more easter eggs so that users are able to be surprised when they do different things on the screen and explore different aspects of the site.
+3. Add more details to the structures to make it very similar to what they look like in their animated series and incorporate some blender models for this.
+
+## Improvements to the Roblox game
+1. Optimize the Graphical User Interface [GUI] to look more modern.
+2. Implement more difficult obbies and different difficulty levels so that people with a more advanced skill set are able to play levels that match their skill level.
+3. Create a version where every morph model is able to move like they theselves are running in the scene and add more characters from the television shows so you are able to be any of the iconic characters.
+
+# Question and Answer
+1. **Q:** How can I access the game?
+   **A:** You can create your own Roblox account by following the steps     below:
+
+
+# Authors and acknowledgements
+Thank you for exploring our project! Below is the team that made it happen. 
+
+Thank you to:
+- Edwin Juarbe for helping create the initial site and connections between them with the link to the Roblox game, and creating an entire game from scratch. 
+- Sachi Joshi for designing the site including the different structures and character additions for each specific scene.
+
+We both are currently in our CS460: Graphics course at the University of Massachusetts Boston, and this was our final project for the course. 
+We used a lot of what we learned during the course of this semester and applied it to our project, such as the lighting, camera movements, WASD key movement, and we implemented Roblox Studio and other tools to create a project we enjoyed making. Thank you to Professor Daniel Haehn for guiding us through the semester and being very encouraging! Thank you to the CS 460 staff as well for all the help and feedback!
