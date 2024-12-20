@@ -21,6 +21,7 @@ Initially it opens up on the **Courage the Cowardly Dog Show** scene:
 ![courage](https://github.com/user-attachments/assets/1d3d531b-f71c-41c2-b8c7-911bda70d584)
 
 You can then click through the different scenes from the menu button in the top left corner. Below are the other scenes you can immerse yourself in:
+
 **SpongeBob SquarePants**
 ![spongebob](https://github.com/user-attachments/assets/ff6243de-df5c-4eca-91ff-220a123b1a2e)
 **Regular Show**
@@ -31,6 +32,7 @@ You can then click through the different scenes from the menu button in the top 
 
 ## Roblox Visuals 
 Below are the different characters you can choose from:
+
 ![image](https://github.com/user-attachments/assets/a33249c3-e93f-40b8-9c5b-f0a835e8bd94) ![image](https://github.com/user-attachments/assets/0f53094c-466c-4e0b-bc96-b8e25e579f23) ![image](https://github.com/user-attachments/assets/ffd0c30c-43c7-4186-8d9b-2fbb228847a8) ![image](https://github.com/user-attachments/assets/578400ef-6599-489a-830d-ee47fe005449) ![image](https://github.com/user-attachments/assets/17563282-69b2-4a58-9382-b198761a2578) ![image](https://github.com/user-attachments/assets/6653b7c5-b4e0-40da-b883-54ea004c22e3)
 
 # Game Description
