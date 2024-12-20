@@ -81,8 +81,8 @@ We acknowledge that there are some improvements we can make to create an experie
 Thank you for exploring our project! Below is the team that made it happen. 
 
 Thank you to:
-- Edwin Juarbe for helping create the initial site and connections between them with the link to the Roblox game, and creating an entire game from scratch. 
-- Sachi Joshi for designing the site including the different structures and character additions for each specific scene.
+- Edwin Juarbe for helping create the initial site and connections between them with the link to the Roblox game, and creating the game from scratch. 
+- Sachi Joshi for designing the site including the different structures and character additions for each specific scene and the movements.
 
 We both are currently in our CS460: Graphics course at the University of Massachusetts Boston, and this was our final project for the course. 
 We used a lot of what we learned during the course of this semester and applied it to our project, such as the lighting, camera movements, WASD key movement, and we implemented Roblox Studio and other tools to create a project we enjoyed making. Thank you to Professor Daniel Haehn for guiding us through the semester and being very encouraging! Thank you to the CS 460 staff as well for all the help and feedback!
