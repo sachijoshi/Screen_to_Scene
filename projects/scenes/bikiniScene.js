@@ -31,8 +31,7 @@ export function bikiniScene(scene) {
     addCharacterImages(scene);
 
 }
-
-
+export let spongebobHouseBoundingBox;
 // Helper Function: Pineapple House
 function createPineappleHouse(scene) {
     // Pineapple Main Body
@@ -89,6 +88,11 @@ function createPineappleHouse(scene) {
     const door = new THREE.Mesh(doorGeometry, doorMaterial);
     door.position.set(0, 1, -7.95);
     scene.add(door);
+
+    // Combine bounding box for pineapple, top, and door
+    spongebobHouseBoundingBox = new THREE.Box3().setFromObject(pineapple);
+    spongebobHouseBoundingBox.expandByObject(top);
+    spongebobHouseBoundingBox.expandByObject(door);
 }
 
 

@@ -4,6 +4,7 @@ import { courageScene } from './scenes/courageScene.js';
 import { bikiniScene } from './scenes/bikiniScene.js';
 import { regularScene } from './scenes/regularScene.js';
 import { gumballScene } from './scenes/gumballScene.js';
+import { spongebobHouseBoundingBox } from './scenes/bikiniScene.js';
 
 let scene, camera, renderer, currentAudio;
 let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
@@ -72,23 +73,65 @@ function setupMouseControls() {
     });
 }
 
+let collisionCooldown = false; // Used to prevent repeated triggers
+let collisionDetected = false;
 function animate() {
     requestAnimationFrame(animate);
 
-    // Movement logic
-    direction.z = Number(moveBackward) - Number(moveForward);
-    direction.x = Number(moveRight) - Number(moveLeft);
+    // Get the direction the camera is facing
+    const forward = new THREE.Vector3();
+    camera.getWorldDirection(forward);
+    forward.y = 0; // Ignore vertical movement
+    forward.normalize();
+
+    // Get the right vector by using the cross product with the up vector
+    const right = new THREE.Vector3();
+    right.crossVectors(forward, camera.up).normalize();
+
+    // Movement logic based on relative direction
+    direction.set(0, 0, 0);
+
+    if (moveForward) direction.add(forward);
+    if (moveBackward) direction.sub(forward);
+    if (moveLeft) direction.sub(right);
+    if (moveRight) direction.add(right);
+
     direction.normalize();
 
-    velocity.z = direction.z * 0.1;
     velocity.x = direction.x * 0.1;
+    velocity.z = direction.z * 0.1;
 
     camera.position.add(velocity);
 
     renderer.render(scene, camera);
 
+        // Detect collision with SpongeBob's house
+        if (spongebobHouseBoundingBox) {
+            const playerBox = new THREE.Box3().setFromCenterAndSize(
+                camera.position,
+                new THREE.Vector3(1, 2, 1) // Player's "hitbox"
+            );
+
+            if (playerBox.intersectsBox(spongebobHouseBoundingBox) && !collisionDetected) {
+                collisionDetected = true;
+                if (!collisionCooldown) {
+                    collisionCooldown = true;
+                    setTimeout(() => {
+                        window.open('https://www.roblox.com/games/78130703432892/TV-Show-Obby', '_blank');
+                        collisionCooldown = false;
+                    }, 2000); // Cooldown to prevent multiple triggers
+                }
+            }
+
+            // Reset collision status if player moves away
+            if (!playerBox.intersectsBox(spongebobHouseBoundingBox)) {
+                collisionDetected = false;
+            }
+        }
+
     if (stats) stats.update(); // Update FPS counter
 }
+
 
 function setupSidebarToggle() {
     const sidebar = document.getElementById('sidebar');
