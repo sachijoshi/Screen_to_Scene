@@ -6,15 +6,16 @@ import { regularScene } from './scenes/regularScene.js';
 import { gumballScene } from './scenes/gumballScene.js';
 import { spongebobHouseBoundingBox } from './scenes/bikiniScene.js';
 
-let scene, camera, renderer, currentAudio;
+let scene, camera, renderer;
 let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
 let velocity = new THREE.Vector3();
 let direction = new THREE.Vector3();
-let audioVolume = 0.5; // Default volume
-let showFPS = false; // Default FPS display setting
-let stats; // FPS Stats object
+let showFPS = false;
+let stats;
 let mouseDown = false;
 
+let audioVolume = 0.5
+let currentAudio;
 function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -38,7 +39,20 @@ function init() {
     setupMovementControls();
     setupMouseControls();
 
+    startBackgroundMusic();
     animate();
+}
+function startBackgroundMusic() {
+    currentAudio = new Audio('./audio/lofi.mp3');
+    currentAudio.loop = true;
+    currentAudio.volume = audioVolume;
+
+    // Wait for user interaction before playing
+    document.addEventListener('click', () => {
+        if (currentAudio.paused) {
+            currentAudio.play();
+        }
+    });
 }
 
 function setupMovementControls() {
@@ -123,7 +137,6 @@ function animate() {
                 }
             }
 
-            // Reset collision status if player moves away
             if (!playerBox.intersectsBox(spongebobHouseBoundingBox)) {
                 collisionDetected = false;
             }
@@ -165,7 +178,10 @@ function switchScene(newSceneFunction) {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
     directionalLight.position.set(5, 10, 7.5);
     scene.add(directionalLight);
-    if (currentAudio) currentAudio.stop();
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
     newSceneFunction(scene);
 }
 
@@ -175,12 +191,11 @@ function toggleFPSCounter(enable) {
             stats = new Stats();
             stats.showPanel(0); // 0 = FPS panel
 
-            // Position the FPS counter at the bottom-right corner
             stats.dom.style.position = 'fixed';
             stats.dom.style.bottom = '10px';
             stats.dom.style.right = '10px';
-            stats.dom.style.zIndex = '999'; // Ensure it's below modal (modal z-index is 1000)
-            stats.dom.style.pointerEvents = 'none'; // Prevent blocking clicks on other elements
+            stats.dom.style.zIndex = '999';
+            stats.dom.style.pointerEvents = 'none';
 
             document.body.appendChild(stats.dom);
         }
@@ -207,7 +222,7 @@ function setupSettings() {
 
     volumeSlider.addEventListener('input', (event) => {
         audioVolume = parseFloat(event.target.value);
-        if (currentAudio) currentAudio.setVolume(audioVolume);
+        if (currentAudio) currentAudio.volume = audioVolume;
     });
 
     fpsToggle.addEventListener('change', (event) => {

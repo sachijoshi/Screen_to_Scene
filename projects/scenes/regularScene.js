@@ -3,26 +3,25 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.m
 export function regularScene(scene) {
     console.log('Regular Show Scene Loaded');
 
-    scene.background = new THREE.Color(0xceeef5); // Light blue
+    scene.background = new THREE.Color(0xceeef5);
 
 
-    // Grass plane (park ground)
+    // Grassy ground
     const grassGeometry = new THREE.PlaneGeometry(100, 100);
     const grassMaterial = new THREE.MeshStandardMaterial({ color: 0x228b22 });
     const grass = new THREE.Mesh(grassGeometry, grassMaterial);
     grass.rotation.x = -Math.PI / 2;
     scene.add(grass);
 
-    // Trees
+    // Adding trees
     createTrees(scene);
 
-    // Bench
+    // Adding a bench
     createBench(scene);
 
     // Add Regular Show House
     createRegularShowHouse(scene);
     addCharacterImages(scene);
-
 
     // Add warm sunlight
     const sunlight = new THREE.DirectionalLight(0xffe4b5, 1);
@@ -30,15 +29,15 @@ export function regularScene(scene) {
     scene.add(sunlight);
 }
 
-// Helper Function: Trees
+// Creating the trees
 function createTrees(scene) {
     const treePositions = [
-        { x: -15, z: -12 }, // Left side tree 1
-        { x: -20, z: -12 }, // Left side tree 2
+        { x: -15, z: -12 },
+        { x: -20, z: -12 },
         {x:-10, z: -12},
         {x: 25, z:-12},
-        { x: 15, z: -12 },  // Right side tree 1
-        { x: 20, z: -12 }   // Right side tree 2
+        { x: 15, z: -12 },
+        { x: 20, z: -12 }
     ];
 
     treePositions.forEach((position) => {
@@ -58,7 +57,7 @@ function createTrees(scene) {
     });
 }
 
-// Helper Function: Bench
+// Adding the bench
 function createBench(scene) {
     const benchGeometry = new THREE.BoxGeometry(5, 1, 2);
     const benchMaterial = new THREE.MeshStandardMaterial({ color: 0x654321 });
@@ -69,10 +68,10 @@ function createBench(scene) {
 
 // Helper Function: Regular Show House
 function createRegularShowHouse(scene) {
-    const houseXPosition = 0; // Centered
-    const houseZPosition = -10; // Position in front of the trees
+    const houseXPosition = 0;
+    const houseZPosition = -10;
 
-    // House Main Body
+    // House
     const houseGeometry = new THREE.BoxGeometry(12, 6, 10);
     const houseMaterial = new THREE.MeshStandardMaterial({ color: 0x9cf7e0 });
     const house = new THREE.Mesh(houseGeometry, houseMaterial);
@@ -108,7 +107,7 @@ function createRegularShowHouse(scene) {
     createWindows(scene, houseXPosition, houseZPosition);
 }
 
-// Helper Function: Garage
+// Creating the Garage
 function createGarage(scene, garageXPosition, garageZPosition) {
     const garageGeometry = new THREE.BoxGeometry(8, 5, 6);
     const garageMaterial = new THREE.MeshStandardMaterial({ color: 0x8edeca });
@@ -123,20 +122,17 @@ function createGarage(scene, garageXPosition, garageZPosition) {
     scene.add(garageDoor);
 }
 
-// Helper Function: Windows
+// Adding the Windows
 function createWindows(scene, houseXPosition, houseZPosition) {
     const windowGeometry = new THREE.BoxGeometry(2, 2, 0.1);
     const windowMaterial = new THREE.MeshStandardMaterial({ color: 0x87ceeb }); // Light blue
 
-    // Adjusted z-position to ensure they are slightly in front of the house wall
     const frontWallZPosition = houseZPosition + 5;
 
-    // Left Window
     const leftWindow = new THREE.Mesh(windowGeometry, windowMaterial);
     leftWindow.position.set(houseXPosition - 3, 4, frontWallZPosition); // Properly positioned on the front wall
     scene.add(leftWindow);
 
-    // Right Window
     const rightWindow = new THREE.Mesh(windowGeometry, windowMaterial);
     rightWindow.position.set(houseXPosition + 3, 4, frontWallZPosition); // Properly positioned on the front wall
     scene.add(rightWindow);

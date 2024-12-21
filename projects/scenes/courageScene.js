@@ -1,25 +1,24 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.module.js';
 
+// Creating the scene with a spooky purpple sky
 export function courageScene(scene) {
-  scene.background = new THREE.Color(0x63056e); // Spooky purple background
+  scene.background = new THREE.Color(0x63056e);
 
-  // Desert plane
+  // Dessert on the ground
   const desertGeometry = new THREE.PlaneGeometry(100, 100);
   const desertMaterial = new THREE.MeshStandardMaterial({ color: 0xffd580 });
   const desert = new THREE.Mesh(desertGeometry, desertMaterial);
   desert.rotation.x = -Math.PI / 2;
   scene.add(desert);
 
-  // Courage's house
+  // Adding courage's house and characters
   createCourageHouse(scene);
   addCharacterImages(scene);
 
-
-  // Add a simple ambient light
+// Adding the lighting of the scene
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
   scene.add(ambientLight);
 
-  // Add directional light for shadows
   const directionalLight = new THREE.DirectionalLight(0xffe4b5, 1);
   directionalLight.position.set(10, 10, 10);
   directionalLight.castShadow = true;
