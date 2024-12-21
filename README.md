@@ -73,9 +73,39 @@ We acknowledge that there are some improvements we can make to create an experie
 3. Create a version where every morph model is able to move like they theselves are running in the scene and add more characters from the television shows so you are able to be any of the iconic characters.
 
 # Question and Answer
-1. **Q:** How can I access the game?
-   **A:** You can create your own Roblox account by following the steps     below:
+Q: How can I access the game?
 
+A: You can create your own Roblox account by following the steps below:
+
+- Go to Roblox.com and click Sign Up.
+- Fill out the required information (birthdate, username, password, etc.).
+- Verify your email address (if prompted) to secure your account.
+- Download and install Roblox Studio from here: https://create.roblox.com/
+
+Q: How do I open and play the game in Roblox Studio?
+
+A: Follow these steps:
+
+- Clone or download the project files from this GitHub repository.
+- Locate the .rbxl file in your downloaded files.
+- Open Roblox Studio and select File > Open From File.
+- Navigate to the .rbxl file and open it.
+- Press the Play button in Roblox Studio to test and explore the game.
+
+Q: What features can I expect in the game?
+
+A: The game includes:
+
+- A cinematic intro screen with smooth camera transitions.
+- Checkpoints to save player progress.
+- Morph buttons to transform into different characters.
+- A reset button to return to the starting stage.
+
+Q: Is it possible to play it without Roblox Studio
+
+A: Yes, the link is below:
+
+- https://www.roblox.com/games/78130703432892/TV-Show-Obby
 
 # Authors and acknowledgements
 Thank you for exploring our project! Below is the team that made it happen. 
